@@ -1,0 +1,53 @@
+pacman -S xorg plasma plasma-wayland-session ssdm
+
+// Then lookup for just the necessary packages from kde-applications group, and install them.
+Here's thelist of such applications :
+
+sudo pacman -S ark dolphin dolphin-plugins dragon elisa filelight gwenview kate kcalc kcolorchooser kdf kdialog kget kleopatra kmix kolourpaint konsole ksystemlog kwrite okular partitionmanager sweeper yakuake
+
+(sudo pacman -S packagekit-qt5 is a package which helped make Discover work [cuz I was working with the minimal installation] )
+
+Then, start the display manager, network manager, so that when rebooting, we're greeted by the wayland login screen.
+
+After logging into the wayland session, some configurations and some customization I prefer to do are :
+
+  Install Latte Dock from Discover, or by just doing "sudo pacman -S latte-dock".
+
+   Now First, remove the Default Panel. Everything should be removed and we're only going to be left with the wallpaper.
+
+   Next, we'll add a new Application Menu Bar [Right Click, Add Panel, Application MenuBar]. Then, add the widgets "Application Menu, System Tray, and a Digital Clock" in that order, with a spacer in between the application menu and the other two widgets.
+
+   After that, the latte dock can be started, we can just search for it, and run the app, or run latte-dock on the terminal. Then, transparency effects, and wallpaper changes, size changes for the dock, and everything can be carried out.
+
+   Some Changes I make are :
+   1. a. Latte Dock Settings :
+           Under Behaviour Tab :
+              Visibility - Auto Hide.
+           Under Appearance Tab :
+              Background : Size - 100%; Opacity - 25%
+              Length : Maximum - 50%; Offset - 0%.
+              Items : Zoom on Hover - 70%.
+           Under Effects Tab :
+              Length of padding - 8%; Style for Active - Dot.
+              Shadows : Size - 45%; Opacity - 60%.
+              Animations : Speed - x2.
+           Under Tasks Tab :
+              Actions for Hover - Preview Windows.
+      b. Latte Panel Settings :
+           Under Appearance Tab :
+              Items Size: Absolute - 40 px.
+              Length : Maximum - 50%; Offset - 0%.
+              Background : Size - 100%; Opacity - 25%.
+           Under Effects Tab :
+              Shadows : Size - 45%; Opacity - 60%; Color - HTML : "#2d7bbf"
+              Animations - Speed : x2.
+              Indicators : Length - 8%.
+              Latte Indicator Options : Style For Active - Dot.
+           Under Tasks Tab :
+              Actions : Hover - Preview Windows.
+
+Next, Konsole [KDE's Terminal Emulator] Configuration :
+    Go to Konsole, select "Settings" from the Application menu bar at the top-left of your computer's display, and choose Edit Current Profile.
+    Then, Go to Appearance tab, click the already chosen default theme (Breeze in my case); and then choose Edit from the right side. Select the Blur Background option, and set Background transparency to 17%. Then, move to System Settings -> Workspace Behaviour -> Desktop Effects -> Blur, and choose the setting kinda option next to it, on the far right of the Blur rectangular field.
+
+    Blur Strength - 5 from Far right; Noise Strength - 7 from Far left. [ Context = Left Side - Light, Right Side - Strong; and there are 15 lines, dividing the line into 17 divisions. ]
